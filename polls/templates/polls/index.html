@@ -1,0 +1,10 @@
+{% if election_list %}
+    <h2>Election List</h2>
+    <ul>
+    {% for election in election_list %}
+        <li><a href="{% url 'polls:detail' election.id %}">{{ election.election_name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No elections are available.</p>
+{% endif %}
